@@ -1,9 +1,15 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 class Empresa {
 
     private String nombreComercial;
     private String direccion;
+
+
 
     public String getNombreComercial() {
         return this.nombreComercial;
@@ -32,6 +38,7 @@ class Camion {
     private String descripcion;
     private String estado;
     private Sucursal sucursalAsociada;
+
 
     public int getCodigoCamion() {
         return this.codigoCamion;
@@ -70,16 +77,8 @@ class Camion {
     }
 
 
-    public void agregarNuevoCamion(int codigoCamion, String patente, String descripcion, int estado, Sucursal sucursal) {
-
-    }
-
-    public void desvincularCamion() {
-
-    }
-
-    public void estadoCamion() {
-
+    public void setSucursalAsociada(Sucursal sucursal) {
+        this.sucursalAsociada = sucursal;
     }
 }
 
@@ -88,6 +87,8 @@ class Sucursal {
     private int codigoSucursal;
     private String regionAsociada;
     private Empresa empresaAsociada;
+
+    private List<Camion> camiones = new ArrayList<>();
 
     public int getCodigoSucursal() {
         return this.codigoSucursal;
@@ -111,14 +112,26 @@ class Sucursal {
         return this.empresaAsociada;
     }
 
-    /**
-     *
-     * @param empresaAsociada
-     */
+
     public void setEmpresaAsociada(Empresa empresaAsociada) {
         this.empresaAsociada = empresaAsociada;
     }
 
+    public void agregarCamion(Camion nuevoCamion) {
+
+        nuevoCamion.setSucursalAsociada(this);
+        camiones.add(nuevoCamion);
+    }
+
+
+    public void estadoCamion() {
+
+    }
+
+    public void devincularCamion(Camion camion) {
+        camion.setSucursalAsociada(null);
+        camiones.remove(camion);
+    }
 }
 
 class Flete {
@@ -245,18 +258,71 @@ class Producto {
     }
 
 }
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Crear un objeto Empresa
+        System.out.println("Ingrese el nombre comercial de la empresa:");
+        String nombreComercial = scanner.nextLine();
+        System.out.println("Ingrese la dirección de la empresa:");
+        String direccion = scanner.nextLine();
+        Empresa empresa = new Empresa();
+        empresa.setNombreComercial(nombreComercial);
+        empresa.setDireccion(direccion);
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Crear la primera sucursal del objeto Empresa
+        System.out.println("Ingrese el código de la sucursal:");
+        int codigoSucursal = scanner.nextInt();
+        scanner.nextLine(); // consume newline left-over
+        System.out.println("Ingrese la región asociada a la sucursal:");
+        String regionAsociada = scanner.nextLine();
+        Sucursal sucursal = new Sucursal();
+        sucursal.setCodigoSucursal(codigoSucursal);
+        sucursal.setRegionAsociada(regionAsociada);
+        sucursal.setEmpresaAsociada(empresa);
+
+        // Asociar el primer camión a la Sucursal
+        System.out.println("Ingrese el código del camión:");
+        int codigoCamion = scanner.nextInt();
+        scanner.nextLine(); // consume newline left-over
+        System.out.println("Ingrese la patente del camión:");
+        String patente = scanner.nextLine();
+        System.out.println("Seleccione el estado del camión: 1 para \"out of service\", 2 para \"on service\"");
+        int opcionEstado = scanner.nextInt();
+        String estado;
+        if (opcionEstado == 1) {
+            estado = "out of service";
+        } else if (opcionEstado == 2) {
+            estado = "on service";
+        } else {
+            System.out.println("Opción no válida. Se asignará por defecto \"out of service\"");
+            estado = "out of service";
         }
+
+        Camion camion = new Camion();
+        camion.setCodigoCamion(codigoCamion);
+        camion.setPatente(patente);
+        camion.setEstado(estado);
+        camion.setSucursalAsociada(sucursal);
+        sucursal.agregarCamion(camion);
+        sucursal.devincularCamion(camion);
+
+
+        System.out.println("\nDetalles de la Empresa:");
+        System.out.println("Nombre Comercial: " + empresa.getNombreComercial());
+        System.out.println("Dirección: " + empresa.getDireccion());
+
+
+        System.out.println("\nDetalles de la Sucursal:");
+        System.out.println("Código de Sucursal: " + sucursal.getCodigoSucursal());
+        System.out.println("Región Asociada: " + sucursal.getRegionAsociada());
+
+
+        System.out.println("\nDetalles del Camión:");
+        System.out.println("Código del Camión: " + camion.getCodigoCamion());
+        System.out.println("Patente: " + camion.getPatente());
+        System.out.println("Estado: " + camion.getEstado());
     }
 }
