@@ -1,3 +1,8 @@
 package org.example;
+import java.util.*;
 
-//creación de mi rama
+public class Main {
+
+
+    // getters y setters
+}
