@@ -124,9 +124,14 @@ class Sucursal {
     }
 
 
-    public void estadoCamion(Camion nuevoCamion) {
-
-        
+    public void estadoCamion() {
+        System.out.println("Estado de los camiones en esta sucursal:");
+        for (Camion camion : camiones) {
+            System.out.println("Código del Camión: " + camion.getCodigoCamion());
+            System.out.println("Patente: " + camion.getPatente());
+            System.out.println("Estado: " + camion.getEstado());
+            System.out.println("-----------------------------");
+        }
 
     }
 
@@ -259,7 +264,7 @@ public class Main {
         camion.setSucursalAsociada(sucursal);
         sucursal.agregarCamion(camion);
         sucursal.devincularCamion(camion);
-        sucursal.estadoCamion(camion);
+        sucursal.estadoCamion();
 
 
         System.out.println("\nDetalles de la Empresa:");
