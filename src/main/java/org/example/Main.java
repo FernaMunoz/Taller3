@@ -10,9 +10,7 @@ public class Main {
         String nombreComercial = scanner.nextLine();
         System.out.println("Ingrese la dirección de la empresa:");
         String direccion = scanner.nextLine();
-        Empresa empresa = new Empresa();
-        empresa.setNombreComercial(nombreComercial);
-        empresa.setDireccion(direccion);
+        Empresa empresa = new Empresa(nombreComercial, direccion);
 
         // Crear la primera sucursal del objeto Empresa
         System.out.println("Ingrese el código de la sucursal:");
@@ -20,10 +18,7 @@ public class Main {
         scanner.nextLine(); // consume newline left-over
         System.out.println("Ingrese la región asociada a la sucursal:");
         String regionAsociada = scanner.nextLine();
-        Sucursal sucursal = new Sucursal();
-        sucursal.setCodigoSucursal(codigoSucursal);
-        sucursal.setRegionAsociada(regionAsociada);
-        sucursal.setEmpresaAsociada(empresa);
+        Sucursal sucursal = new Sucursal(codigoSucursal, regionAsociada, empresa);
 
         // Asociar el primer camión a la Sucursal
         System.out.println("Ingrese el código del camión:");
@@ -43,11 +38,7 @@ public class Main {
             estado = "out of service";
         }
 
-        Camion camion = new Camion();
-        camion.setCodigoCamion(codigoCamion);
-        camion.setPatente(patente);
-        camion.setEstado(estado);
-        camion.setSucursalAsociada(sucursal);
+        Camion camion = new Camion(codigoCamion, patente, estado, sucursal);
 
         // Imprimir los detalles de la Empresa
         System.out.println("\nDetalles de la Empresa:");
