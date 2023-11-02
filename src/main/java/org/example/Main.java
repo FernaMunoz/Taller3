@@ -1,5 +1,7 @@
 package org.example;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -55,5 +57,42 @@ public class Main {
         System.out.println("Código del Camión: " + camion.getCodigoCamion());
         System.out.println("Patente: " + camion.getPatente());
         System.out.println("Estado: " + camion.getEstado());
+
+        // Menú para agregar un nuevo camión a una sucursal
+        while (true) {
+            System.out.println("\n¿Deseas agregar un nuevo camión a una sucursal? (1: Sí, 2: No)");
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // consume newline left-over
+
+            if (opcion == 1) {
+                // Solicitar los detalles del nuevo camión
+                System.out.println("Ingrese el código del nuevo camión:");
+                int codigoCamionNuevo = scanner.nextInt();
+                scanner.nextLine(); // consume newline left-over
+                System.out.println("Ingrese la patente del nuevo camión:");
+                String patenteNuevo = scanner.nextLine();
+                System.out.println("Seleccione el estado del nuevo camión: 1 para \"out of service\", 2 para \"on service\"");
+                int opcionEstadoNuevo = scanner.nextInt();
+                String estadoNuevo;
+                if (opcionEstadoNuevo == 1) {
+                    estadoNuevo = "out of service";
+                } else if (opcionEstadoNuevo == 2) {
+                    estadoNuevo = "on service";
+                } else {
+                    System.out.println("Opción no válida. Se asignará por defecto \"out of service\"");
+                    estadoNuevo = "out of service";
+                }
+
+                // Crear el nuevo camión y agregarlo a la sucursal
+                Camion nuevoCamion = new Camion(codigoCamionNuevo, patenteNuevo, estadoNuevo, sucursal);
+                sucursal.agregarCamion(nuevoCamion);
+
+                System.out.println("¡Nuevo camión agregado exitosamente!");
+            } else if (opcion == 2) {
+                break; // Salir del bucle y terminar el programa
+            } else {
+                System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+            }
+        }
     }
 }
