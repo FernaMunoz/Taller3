@@ -51,4 +51,5 @@ public class Camion {
     public void setSucursalAsociada(Sucursal sucursalAsociada) {
         this.sucursalAsociada = sucursalAsociada;
     }
+
 }

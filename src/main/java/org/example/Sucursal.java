@@ -37,5 +37,9 @@ public class Sucursal {
     public void setEmpresaAsociada(Empresa empresaAsociada) {
         this.empresaAsociada = empresaAsociada;
     }
+    public void agregarCamion(Camion nuevoCamion) {
 
+        nuevoCamion.setSucursalAsociada(this);
+        camiones.add(nuevoCamion);
+    }
 }
