@@ -1,22 +1,19 @@
 package org.example;
-import java.util.ArrayList;
-import java.util.List;
-public class Camion {
 
+public class Camion {
 	private int codigoCamion;
 	private String patente;
 	private String descripcion;
-	private String estado;
+	private String estado; // "out of service" o "on service”
 	private Sucursal sucursalAsociada;
-	public Camion(int codigoCamion, String patente, String descripcion, String estado, Sucursal sucursalAsociada) {
+	public Camion(int codigoCamion, String patente, String estado, Sucursal sucursalAsociada) {
 		this.codigoCamion = codigoCamion;
 		this.patente = patente;
-		this.descripcion = descripcion;
 		this.estado = estado;
 		this.sucursalAsociada = sucursalAsociada;
 	}
 	public int getCodigoCamion() {
-		return this.codigoCamion;
+		return codigoCamion;
 	}
 
 	public void setCodigoCamion(int codigoCamion) {
@@ -24,7 +21,7 @@ public class Camion {
 	}
 
 	public String getPatente() {
-		return this.patente;
+		return patente;
 	}
 
 	public void setPatente(String patente) {
@@ -32,7 +29,7 @@ public class Camion {
 	}
 
 	public String getDescripcion() {
-		return this.descripcion;
+		return descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
@@ -40,26 +37,18 @@ public class Camion {
 	}
 
 	public String getEstado() {
-		return this.estado;
+		return estado;
 	}
 
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	public void agregarNuevoCamion(int codigoCamion, String patente, String descripcion, int estado, Sucursal sucursal) {
-		// TODO - implement Camion.agregarNuevoCamion
-		throw new UnsupportedOperationException();
+	public Sucursal getSucursalAsociada() {
+		return sucursalAsociada;
 	}
 
-	public void desvincularCamion() {
-		// TODO - implement Camion.desvincularCamion
-		throw new UnsupportedOperationException();
+	public void setSucursalAsociada(Sucursal sucursalAsociada) {
+		this.sucursalAsociada = sucursalAsociada;
 	}
-
-	public void estadoCamion() {
-		// TODO - implement Camion.estadoCamion
-		throw new UnsupportedOperationException();
-	}
-
 }
