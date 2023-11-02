@@ -30,7 +30,7 @@ OBS:
 - Considere el uso de las buenas prácticas en el modelado de sus clases y su código fuente.
 - Cualquier intento o atisbo de soluciones idénticas ==>  1,0 para TOD@S los implicados.
 
-- Identificar clases:
+Identificar clases:
 
 clase Empresa
 atributos:
@@ -38,21 +38,27 @@ String nombreComercial
 String dirección
 clase Camion
 atributos:
+
 int codigoCamion 
 String patente
 String descripcion 
 String estado // "out of service" o "on service”
+Sucursal sucursalAsociada
 clase Sucursal
 atributos:
 int codigoSucursal
 String regionAsociada
 Empresa empresaAsociada
+
     -  clase Flete
             atributos:
 
 int codigoFlete
 String descripción
+listaPacks// lista de cada vez que se cree un pack de max 20 agregar aca 
 Camion CamionAsociado
+metodo:
+calcularPrecio()// determinar cuantos productos hay en la lista packs y multiplicar esa cantidad por 5000 (cada producto cuesta 5000 su transporte)
 
 
 - clase Producto
@@ -62,4 +68,4 @@ String tipoProducto
 - clase Pack
              atributos:
 ListaProductos//max 20 
-
+- menu(Main)
