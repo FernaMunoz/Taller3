@@ -69,3 +69,15 @@ String tipoProducto
              atributos:
 ListaProductos//max 20 
 - menu(Main)
+
+// primero le pide al usuario los datos para crear un objeto empresa
+//después le pide los datos para crear la primera sucursal del objeto empresa creado anteriormente 
+después le pide los datos para asociar el primer camión a la sucursal 
+//opción realizar un flete, primero consultar por los productos y cuando sean 20 crear un pack, hasta llegar al límite de 5 packs (cada pack es de 20 productos) y preguntar la sucursal asociada y posteriormente mostrar de opción de camiones asociados a la sucursal en estado “on service” para seleccionar uno
+por último mostrar el precio del flete usando el método calcular Precio() del flete 
+//opción AgregarCamion, primero consultar a que sucursal le quiere agregar un camión 
+//opción desvincular camión de una sucursal 
+//opción agregar producto a un flete 
+//opción quitar producto a un flete
+//opción cambiar de estado a un camión 
+// opción calcular precio a un flete determinado 
