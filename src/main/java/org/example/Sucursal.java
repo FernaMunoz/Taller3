@@ -5,7 +5,7 @@ public class Sucursal {
 	private int codigoSucursal;
 	private String regionAsociada;
 	private Empresa empresaAsociada;
-	List<Camion> camiones;
+	private List<Camion> camiones;
 	public Sucursal(int codigoSucursal, String regionAsociada, Empresa empresaAsociada) {
 		this.codigoSucursal = codigoSucursal;
 		this.regionAsociada = regionAsociada;

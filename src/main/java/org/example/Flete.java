@@ -1,10 +1,18 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
 public class Flete {
 
 	private int codigoFlete;
 	private String descripcion;
 	private Camion camionAsociado;
 	private Pack listaPacks;
+	public Flete(int codigoFlete, String descripcion, Camion camionAsociado, Pack listaPacks) {
+		this.codigoFlete = codigoFlete;
+		this.descripcion = descripcion;
+		this.camionAsociado = camionAsociado;
+		this.listaPacks = listaPacks;
+	}
 
 	public int getCodigoFlete() {
 		return this.codigoFlete;

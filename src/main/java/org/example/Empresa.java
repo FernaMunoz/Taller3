@@ -1,9 +1,7 @@
 package org.example;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Empresa {
-
 	private String nombreComercial;
 	private String direccion;
 	List<Sucursal> sucursales;
@@ -13,20 +11,16 @@ public class Empresa {
 		this.direccion = direccion;
 		this.sucursales = new ArrayList<>();
 	}
-
 	public String getNombreComercial() {
 			return this.nombreComercial;
 		}
 	public void setNombreComercial(String nombreComercial) {
 		this.nombreComercial = nombreComercial;
 	}
-
 	public String getDireccion() {
 		return this.direccion;
 	}
-
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
 }

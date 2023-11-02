@@ -1,4 +1,6 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
 public class Camion {
 
 	private int codigoCamion;
@@ -6,7 +8,13 @@ public class Camion {
 	private String descripcion;
 	private String estado;
 	private Sucursal sucursalAsociada;
-
+	public Camion(int codigoCamion, String patente, String descripcion, String estado, Sucursal sucursalAsociada) {
+		this.codigoCamion = codigoCamion;
+		this.patente = patente;
+		this.descripcion = descripcion;
+		this.estado = estado;
+		this.sucursalAsociada = sucursalAsociada;
+	}
 	public int getCodigoCamion() {
 		return this.codigoCamion;
 	}
