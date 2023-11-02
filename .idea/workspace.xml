@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed24a6dc-4cb7-4995-bd0c-f9920063aa11" name="Changes" comment="creación de mi rama">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Camion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Empresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Sucursal.java" afterDir="false" />
+    <list default="true" id="ed24a6dc-4cb7-4995-bd0c-f9920063aa11" name="Changes" comment="estructura inicial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Camion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Camion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Flete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Flete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Sucursal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -67,12 +74,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698928533432</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="estructura inicial">
+      <option name="closed" value="true" />
+      <created>1698929342480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698929342480</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create README.md" />
     <MESSAGE value="creación de mi rama" />
-    <option name="LAST_COMMIT_MESSAGE" value="creación de mi rama" />
+    <MESSAGE value="estructura inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="estructura inicial" />
   </component>
 </project>

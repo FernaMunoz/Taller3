@@ -12,5 +12,35 @@ public class Flete {
         return listaPacks.size() * 5000; // determinar cuántos productos hay en la lista packs y multiplicar esa cantidad por 5000 (cada producto cuesta 5000 su transporte)
     }
 
-    // agregarProducto y quitarProducto métodos
+    public int getCodigoFlete() {
+        return codigoFlete;
+    }
+
+    public void setCodigoFlete(int codigoFlete) {
+        this.codigoFlete = codigoFlete;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public List<Pack> getListaPacks() {
+        return listaPacks;
+    }
+
+    public void setListaPacks(List<Pack> listaPacks) {
+        this.listaPacks = listaPacks;
+    }
+
+    public Camion getCamionAsociado() {
+        return camionAsociado;
+    }
+
+    public void setCamionAsociado(Camion camionAsociado) {
+        this.camionAsociado = camionAsociado;
+    }
 }
