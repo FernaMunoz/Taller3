@@ -6,12 +6,11 @@ public class Camion {
     private String descripcion;
     private String estado; // "out of service" o "on service”
     private Sucursal sucursalAsociada;
-    public Camion(int codigoCamion, String patente, String descripcion, String estado, Sucursal sucursalAsociada) {
+    public Camion(int codigoCamion, String patente, String estado, Sucursal sucursalAsociada) {
         this.codigoCamion = codigoCamion;
         this.patente = patente;
-        this.descripcion = descripcion;
         this.estado = estado;
-        this.sucursalAsociada = sucursalAsociada
+        this.sucursalAsociada = sucursalAsociada;
     }
     public int getCodigoCamion() {
         return codigoCamion;
