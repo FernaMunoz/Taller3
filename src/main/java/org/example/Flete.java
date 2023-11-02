@@ -1,13 +1,13 @@
 package org.example;
-import java.util.ArrayList;
 import java.util.List;
-public class Flete {
 
+public class Flete {
 	private int codigoFlete;
 	private String descripcion;
 	private Camion camionAsociado;
-	private Pack listaPacks;
-	public Flete(int codigoFlete, String descripcion, Camion camionAsociado, Pack listaPacks) {
+	private List<Pack> listaPacks;
+
+	public Flete(int codigoFlete, String descripcion, Camion camionAsociado, List<Pack> listaPacks) {
 		this.codigoFlete = codigoFlete;
 		this.descripcion = descripcion;
 		this.camionAsociado = camionAsociado;
@@ -33,23 +33,29 @@ public class Flete {
 	public Camion getCamionAsociado() {
 		return this.camionAsociado;
 	}
+
 	public void setCamionAsociado(Camion camionAsociado) {
 		this.camionAsociado = camionAsociado;
 	}
 
-	public void calcularPrecio() {
-
-		throw new UnsupportedOperationException();
+	public void agregarPack(Pack pack) {
+		listaPacks.add(pack);
 	}
 
-	public void agregarProducto(Producto producto) {
-
-		throw new UnsupportedOperationException();
+	public void quitarPack(Pack pack) {
+		listaPacks.remove(pack);
 	}
 
-	public void quitarProducto(Producto producto) {
+	public double calcularPrecioTotal() {
+		int cantidadProductos = 0;
 
-		throw new UnsupportedOperationException();
+		for (Pack pack : listaPacks) {
+			cantidadProductos += pack.getListaProductos().size();
+		}
+
+		double precioPorProducto = 5000.0;
+		double precioTotal = cantidadProductos * precioPorProducto;
+
+		return precioTotal;
 	}
-
 }
