@@ -7,4 +7,8 @@ public class Pack {
     public Pack() {
         this.productos = new ArrayList<>();
     }
+    public List<Producto> getProductos() {
+        return this.productos;
+    }
+
 }
