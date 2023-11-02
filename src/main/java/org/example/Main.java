@@ -124,7 +124,9 @@ class Sucursal {
     }
 
 
-    public void estadoCamion() {
+    public void estadoCamion(Camion nuevoCamion) {
+
+        
 
     }
 
@@ -189,36 +191,11 @@ class Pack {
 }
 
 class Producto {
-
     private int codigoProducto;
     private String tipoProducto;
-    public String nombre;
-    public int stock;
-    public CodigoBarra codigoBarra;
-    public int precio;
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getStock() {
-        return this.stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public int getPrecio() {
-        return this.precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
 
     public int getCodigoProducto() {
-        return this.codigoProducto;
+        return codigoProducto;
     }
 
     public void setCodigoProducto(int codigoProducto) {
@@ -226,39 +203,13 @@ class Producto {
     }
 
     public String getTipoProducto() {
-        return this.tipoProducto;
+        return tipoProducto;
     }
 
     public void setTipoProducto(String tipoProducto) {
         this.tipoProducto = tipoProducto;
     }
-
-    public int getCodigoBarra() {
-
-    }
-
-
-    public void setCodigoBarra(int codigoBarra) {
-
-    }
-
-
-    public void venderProductos(int cantidad) {
-
-    }
-
-
-    public boolean verifcarDisponibilidad(int cantidad) {
-
-    }
-
-
-    public void aplicarDescuento(double descuento) {
-
-    }
-
 }
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -308,6 +259,7 @@ public class Main {
         camion.setSucursalAsociada(sucursal);
         sucursal.agregarCamion(camion);
         sucursal.devincularCamion(camion);
+        sucursal.estadoCamion(camion);
 
 
         System.out.println("\nDetalles de la Empresa:");
