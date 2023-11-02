@@ -9,6 +9,10 @@ class Empresa {
     private String nombreComercial;
     private String direccion;
 
+    public Empresa(String nombreComercial, String direccion) {
+        this.nombreComercial = nombreComercial;
+        this.direccion = direccion;
+    }
 
 
     public String getNombreComercial() {
@@ -126,7 +130,7 @@ class Sucursal {
     }
     public void quitarCamion(Camion camion) {
         camion.setSucursalAsociada(null);
-        camiones.remove(camion); 
+        camiones.remove(camion);
     }
     public void estadoCamion() {
         System.out.println("Estado de los camiones en esta sucursal:");
