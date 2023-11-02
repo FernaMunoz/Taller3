@@ -51,3 +51,22 @@ por último mostrar el precio del flete usando el método calcular Precio() del 
 //opción quitar producto a un flete
 //opción cambiar de estado a un camión 
 // opción calcular precio a un flete determinado 
+
+
+Relación entre clases:
+
+Empresa (1) - Sucursal(1..*)  //asociacion
+(Sin una Sucursal no puede haber una empresa y viceversa)
+
+Sucursal (1) - Camión (1..*) // agregación
+( Una sucursal está asociada a al menos un camion)
+
+Camión(1) - Fletes (*) // asociación
+(Un camión está asociado a varios fletes)
+
+Flete(1..*) - Pack (1...5) //composición
+(Sin un pack no hay flete y viceversa)
+
+Pack (1) - Producto (1…20) // agregación
+(A un pack se le agregan varios productos, máximo 20)
+
