@@ -5,5 +5,7 @@ import java.util.List;
 public class Pack {
     private List<Producto> listaProductos; //max 20
 
-    // getters y setters
+    public void setListaProductos(List<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
 }
