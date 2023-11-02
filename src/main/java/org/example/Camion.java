@@ -1,68 +1,45 @@
+package org.example;
 public class Camion {
 
 	private int codigoCamion;
-	private string patente;
-	private string descripcion;
-	private string estado;
+	private String patente;
+	private String descripcion;
+	private String estado;
 	private Sucursal sucursalAsociada;
 
 	public int getCodigoCamion() {
 		return this.codigoCamion;
 	}
 
-	/**
-	 * 
-	 * @param codigoCamion
-	 */
 	public void setCodigoCamion(int codigoCamion) {
 		this.codigoCamion = codigoCamion;
 	}
 
-	public string getPatente() {
+	public String getPatente() {
 		return this.patente;
 	}
 
-	/**
-	 * 
-	 * @param patente
-	 */
-	public void setPatente(string patente) {
+	public void setPatente(String patente) {
 		this.patente = patente;
 	}
 
-	public string getDescripcion() {
+	public String getDescripcion() {
 		return this.descripcion;
 	}
 
-	/**
-	 * 
-	 * @param descripcion
-	 */
-	public void setDescripcion(string descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	public string getEstado() {
+	public String getEstado() {
 		return this.estado;
 	}
 
-	/**
-	 * 
-	 * @param estado
-	 */
-	public void setEstado(string estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	/**
-	 * 
-	 * @param codigoCamion
-	 * @param patente
-	 * @param descripcion
-	 * @param estado
-	 * @param sucursal
-	 */
-	public void agregarNuevoCamion(int codigoCamion, string patente, string descripcion, int estado, Sucursal sucursal) {
+	public void agregarNuevoCamion(int codigoCamion, String patente, String descripcion, int estado, Sucursal sucursal) {
 		// TODO - implement Camion.agregarNuevoCamion
 		throw new UnsupportedOperationException();
 	}

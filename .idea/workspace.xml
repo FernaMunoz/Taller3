@@ -4,14 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed24a6dc-4cb7-4995-bd0c-f9920063aa11" name="Changes" comment="">
+    <list default="true" id="ed24a6dc-4cb7-4995-bd0c-f9920063aa11" name="Changes" comment="codigo generado por el visual arreglado y sin errores">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Camion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Camion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Empresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Flete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Flete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Pack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Sucursal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2XcOdMiqfFkW80cbZ60OIoDGlrB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -22,9 +46,23 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "rama__Powell",
     "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Taller3/src/main/java/org/example/Main.java"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,7 +72,21 @@
       <option name="presentableId" value="Default" />
       <updated>1698924990488</updated>
     </task>
+    <task id="LOCAL-00001" summary="codigo generado por el visual">
+      <option name="closed" value="true" />
+      <created>1698928772923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698928772923</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="codigo generado por el visual" />
+    <MESSAGE value="codigo generado por el visual arreglado y sin errores" />
+    <option name="LAST_COMMIT_MESSAGE" value="codigo generado por el visual arreglado y sin errores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
