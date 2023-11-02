@@ -58,13 +58,16 @@ public class Main {
         System.out.println("Patente: " + camion.getPatente());
         System.out.println("Estado: " + camion.getEstado());
 
-        // Menú para agregar un nuevo camión a una sucursal
+        // Menú principal
         while (true) {
-            System.out.println("\n¿Deseas agregar un nuevo camión a una sucursal? (1: Sí, 2: No)");
-            int opcion = scanner.nextInt();
+            System.out.println("\n¿Qué te gustaría hacer?");
+            System.out.println("1. Agregar un nuevo camión a una sucursal");
+            System.out.println("2. Realizar un flete");
+            System.out.println("3. Finalizar");
+            int opcionMenu = scanner.nextInt();
             scanner.nextLine(); // consume newline left-over
 
-            if (opcion == 1) {
+            if (opcionMenu == 1) {
                 // Solicitar los detalles del nuevo camión
                 System.out.println("Ingrese el código del nuevo camión:");
                 int codigoCamionNuevo = scanner.nextInt();
@@ -88,7 +91,70 @@ public class Main {
                 sucursal.agregarCamion(nuevoCamion);
 
                 System.out.println("¡Nuevo camión agregado exitosamente!");
-            } else if (opcion == 2) {
+            } else if (opcionMenu == 2) {
+                // Crear los packs de productos
+                List<Pack> packs = new ArrayList<>();
+                for (int i = 0; i < 5; i++) { // Límite de 5 packs
+                    Pack pack = new Pack();
+                    for (int j = 0; j < 20; j++) { // Cada pack es de 20 productos
+                        System.out.println("Ingrese el código del producto " + (j+1) + " del pack " + (i+1) + ":");
+                        int codigoProducto = scanner.nextInt();
+                        scanner.nextLine(); // consume newline left-over
+                        System.out.println("Ingrese el tipo del producto " + (j+1) + " del pack " + (i+1) + ":");
+                        String tipoProducto = scanner.nextLine();
+
+                        Producto producto = new Producto();
+                        producto.setCodigoProducto(codigoProducto);
+                        producto.setTipoProducto(tipoProducto);
+
+                        pack.getProductos().add(producto);
+                    }
+                    packs.add(pack);
+                }
+
+                // Seleccionar la sucursal asociada
+                System.out.println("Ingrese el código de la sucursal asociada al flete:");
+                int codigoSucursalFlete = scanner.nextInt();
+                scanner.nextLine(); // consume newline left-over
+                Sucursal sucursalFlete = null;
+                for (Sucursal suc : empresa.getSucursales()) {
+                    if (suc.getCodigoSucursal() == codigoSucursalFlete) {
+                        sucursalFlete = suc;
+                        break;
+                    }
+                }
+
+                if (sucursalFlete == null) {
+                    System.out.println("No se encontró ninguna sucursal con el código proporcionado.");
+                    continue;
+                }
+
+                // Seleccionar un camión en estado "on service" asociado a la sucursal
+                Camion camionFlete = null;
+                for (Camion cam : sucursalFlete.getCamiones()) {
+                    if ("on service".equals(cam.getEstado())) {
+                        camionFlete = cam;
+                        break;
+                    }
+                }
+
+                if (camionFlete == null) {
+                    System.out.println("No se encontró ningún camión en estado \"on service\" en la sucursal seleccionada.");
+                    continue;
+                }
+
+                // Crear el flete y asociarlo al camión seleccionado
+                System.out.println("Ingrese el código del flete:");
+                int codigoFlete = scanner.nextInt();
+                scanner.nextLine(); // consume newline left-over
+                System.out.println("Ingrese la descripción del flete:");
+                String descripcionFlete = scanner.nextLine();
+
+                Flete flete = new Flete(codigoFlete, descripcionFlete, camionFlete, packs.get(0)); // Asociar el primer pack al flete
+                camionFlete.setFletes(flete);
+
+                System.out.println("¡Flete realizado exitosamente!");
+            } else if (opcionMenu == 3) {
                 break; // Salir del bucle y terminar el programa
             } else {
                 System.out.println("Opción no válida. Por favor, intenta de nuevo.");
@@ -96,3 +162,4 @@ public class Main {
         }
     }
 }
+

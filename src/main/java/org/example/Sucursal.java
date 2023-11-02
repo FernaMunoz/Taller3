@@ -42,4 +42,8 @@ public class Sucursal {
         nuevoCamion.setSucursalAsociada(this);
         camiones.add(nuevoCamion);
     }
+    public List<Camion> getCamiones() {
+        return this.camiones;
+    }
+
 }

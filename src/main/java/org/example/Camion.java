@@ -1,16 +1,21 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Camion {
     private int codigoCamion;
     private String patente;
     private String descripcion;
     private String estado; // "out of service" o "on service”
     private Sucursal sucursalAsociada;
+
+    List<Flete> fletes;
     public Camion(int codigoCamion, String patente, String estado, Sucursal sucursalAsociada) {
         this.codigoCamion = codigoCamion;
         this.patente = patente;
         this.estado = estado;
-        this.sucursalAsociada = sucursalAsociada;
+        this.fletes = new ArrayList<>();
     }
     public int getCodigoCamion() {
         return codigoCamion;
@@ -46,6 +51,13 @@ public class Camion {
 
     public Sucursal getSucursalAsociada() {
         return sucursalAsociada;
+    }
+    public void setFletes(Flete flete) {
+        this.fletes.add(flete);
+    }
+
+    public List<Flete> getFletes() {
+        return this.fletes;
     }
 
     public void setSucursalAsociada(Sucursal sucursalAsociada) {
