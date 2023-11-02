@@ -32,98 +32,102 @@ class Empresa {
 }
 
 class Camion {
-
     private int codigoCamion;
     private String patente;
     private String descripcion;
-    private String estado;
+    private String estado; // "out of service" o "on service”
     private Sucursal sucursalAsociada;
-
-
-    public int getCodigoCamion() {
-        return this.codigoCamion;
+    public Camion(int codigoCamion, String patente, String estado, Sucursal sucursalAsociada) {
+        this.codigoCamion = codigoCamion;
+        this.patente = patente;
+        this.estado = estado;
+        this.sucursalAsociada = sucursalAsociada;
     }
-
+    public int getCodigoCamion() {
+        return codigoCamion;
+    }
 
     public void setCodigoCamion(int codigoCamion) {
         this.codigoCamion = codigoCamion;
     }
 
     public String getPatente() {
-        return this.patente;
+        return patente;
     }
-
 
     public void setPatente(String patente) {
         this.patente = patente;
     }
 
     public String getDescripcion() {
-        return this.descripcion;
+        return descripcion;
     }
-
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
     public String getEstado() {
-        return this.estado;
+        return estado;
     }
-
 
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-
-    public void setSucursalAsociada(Sucursal sucursal) {
-        this.sucursalAsociada = sucursal;
+    public Sucursal getSucursalAsociada() {
+        return sucursalAsociada;
     }
+
+    public void setSucursalAsociada(Sucursal sucursalAsociada) {
+        this.sucursalAsociada = sucursalAsociada;
+    }
+
 }
 
 class Sucursal {
-
     private int codigoSucursal;
     private String regionAsociada;
     private Empresa empresaAsociada;
-
-    private List<Camion> camiones = new ArrayList<>();
-
-    public int getCodigoSucursal() {
-        return this.codigoSucursal;
+    List<Camion> camiones;
+    public Sucursal(int codigoSucursal, String regionAsociada, Empresa empresaAsociada) {
+        this.codigoSucursal = codigoSucursal;
+        this.regionAsociada = regionAsociada;
+        this.empresaAsociada = empresaAsociada;
+        this.camiones = new ArrayList<>();
     }
-
+    public int getCodigoSucursal() {
+        return codigoSucursal;
+    }
 
     public void setCodigoSucursal(int codigoSucursal) {
         this.codigoSucursal = codigoSucursal;
     }
 
     public String getRegionAsociada() {
-        return this.regionAsociada;
+        return regionAsociada;
     }
-
 
     public void setRegionAsociada(String regionAsociada) {
         this.regionAsociada = regionAsociada;
     }
 
     public Empresa getEmpresaAsociada() {
-        return this.empresaAsociada;
+        return empresaAsociada;
     }
-
 
     public void setEmpresaAsociada(Empresa empresaAsociada) {
         this.empresaAsociada = empresaAsociada;
     }
-
     public void agregarCamion(Camion nuevoCamion) {
 
         nuevoCamion.setSucursalAsociada(this);
         camiones.add(nuevoCamion);
     }
-
-
+    public void quitarCamion(Camion camion) {
+        camion.setSucursalAsociada(null);
+        camiones.remove(camion); 
+    }
     public void estadoCamion() {
         System.out.println("Estado de los camiones en esta sucursal:");
         for (Camion camion : camiones) {
@@ -132,12 +136,6 @@ class Sucursal {
             System.out.println("Estado: " + camion.getEstado());
             System.out.println("-----------------------------");
         }
-
-    }
-
-    public void devincularCamion(Camion camion) {
-        camion.setSucursalAsociada(null);
-        camiones.remove(camion);
     }
 }
 
@@ -224,9 +222,7 @@ public class Main {
         String nombreComercial = scanner.nextLine();
         System.out.println("Ingrese la dirección de la empresa:");
         String direccion = scanner.nextLine();
-        Empresa empresa = new Empresa();
-        empresa.setNombreComercial(nombreComercial);
-        empresa.setDireccion(direccion);
+        Empresa empresa = new Empresa(nombreComercial, direccion);
 
         // Crear la primera sucursal del objeto Empresa
         System.out.println("Ingrese el código de la sucursal:");
@@ -234,10 +230,7 @@ public class Main {
         scanner.nextLine(); // consume newline left-over
         System.out.println("Ingrese la región asociada a la sucursal:");
         String regionAsociada = scanner.nextLine();
-        Sucursal sucursal = new Sucursal();
-        sucursal.setCodigoSucursal(codigoSucursal);
-        sucursal.setRegionAsociada(regionAsociada);
-        sucursal.setEmpresaAsociada(empresa);
+        Sucursal sucursal = new Sucursal(codigoSucursal, regionAsociada, empresa);
 
         // Asociar el primer camión a la Sucursal
         System.out.println("Ingrese el código del camión:");
@@ -257,29 +250,59 @@ public class Main {
             estado = "out of service";
         }
 
-        Camion camion = new Camion();
-        camion.setCodigoCamion(codigoCamion);
-        camion.setPatente(patente);
-        camion.setEstado(estado);
-        camion.setSucursalAsociada(sucursal);
-        sucursal.agregarCamion(camion);
-        sucursal.devincularCamion(camion);
-        sucursal.estadoCamion();
+        Camion camion = new Camion(codigoCamion, patente, estado, sucursal);
 
-
+        // Imprimir los detalles de la Empresa
         System.out.println("\nDetalles de la Empresa:");
         System.out.println("Nombre Comercial: " + empresa.getNombreComercial());
         System.out.println("Dirección: " + empresa.getDireccion());
 
-
+        // Imprimir los detalles de la Sucursal
         System.out.println("\nDetalles de la Sucursal:");
         System.out.println("Código de Sucursal: " + sucursal.getCodigoSucursal());
         System.out.println("Región Asociada: " + sucursal.getRegionAsociada());
 
-
+        // Imprimir los detalles del Camión
         System.out.println("\nDetalles del Camión:");
         System.out.println("Código del Camión: " + camion.getCodigoCamion());
         System.out.println("Patente: " + camion.getPatente());
         System.out.println("Estado: " + camion.getEstado());
+
+        // Menú para agregar un nuevo camión a una sucursal
+        while (true) {
+            System.out.println("\n¿Deseas agregar un nuevo camión a una sucursal? (1: Sí, 2: No)");
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // consume newline left-over
+
+            if (opcion == 1) {
+                // Solicitar los detalles del nuevo camión
+                System.out.println("Ingrese el código del nuevo camión:");
+                int codigoCamionNuevo = scanner.nextInt();
+                scanner.nextLine(); // consume newline left-over
+                System.out.println("Ingrese la patente del nuevo camión:");
+                String patenteNuevo = scanner.nextLine();
+                System.out.println("Seleccione el estado del nuevo camión: 1 para \"out of service\", 2 para \"on service\"");
+                int opcionEstadoNuevo = scanner.nextInt();
+                String estadoNuevo;
+                if (opcionEstadoNuevo == 1) {
+                    estadoNuevo = "out of service";
+                } else if (opcionEstadoNuevo == 2) {
+                    estadoNuevo = "on service";
+                } else {
+                    System.out.println("Opción no válida. Se asignará por defecto \"out of service\"");
+                    estadoNuevo = "out of service";
+                }
+
+                // Crear el nuevo camión y agregarlo a la sucursal
+                Camion nuevoCamion = new Camion(codigoCamionNuevo, patenteNuevo, estadoNuevo, sucursal);
+                sucursal.agregarCamion(nuevoCamion);
+
+                System.out.println("¡Nuevo camión agregado exitosamente!");
+            } else if (opcion == 2) {
+                break; // Salir del bucle y terminar el programa
+            } else {
+                System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+            }
+        }
     }
 }
