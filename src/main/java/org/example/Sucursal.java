@@ -1,9 +1,17 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
 public class Sucursal {
-
 	private int codigoSucursal;
 	private String regionAsociada;
 	private Empresa empresaAsociada;
+	List<Camion> camiones;
+	public Sucursal(int codigoSucursal, String regionAsociada, Empresa empresaAsociada) {
+		this.codigoSucursal = codigoSucursal;
+		this.regionAsociada = regionAsociada;
+		this.empresaAsociada = empresaAsociada;
+		this.camiones = new ArrayList<>();
+	}
 
 	public int getCodigoSucursal() {
 		return this.codigoSucursal;
