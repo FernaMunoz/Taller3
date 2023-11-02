@@ -29,3 +29,37 @@ OBS:
 - La clase termina a las 10:30hrs, pero puede entregar su resultado final en Github para 3.) hasta las 11:00, con la integración final.
 - Considere el uso de las buenas prácticas en el modelado de sus clases y su código fuente.
 - Cualquier intento o atisbo de soluciones idénticas ==>  1,0 para TOD@S los implicados.
+
+- Identificar clases:
+
+clase Empresa
+atributos:
+String nombreComercial
+String dirección
+clase Camion
+atributos:
+int codigoCamion 
+String patente
+String descripcion 
+String estado // "out of service" o "on service”
+clase Sucursal
+atributos:
+int codigoSucursal
+String regionAsociada
+Empresa empresaAsociada
+    -  clase Flete
+            atributos:
+
+int codigoFlete
+String descripción
+Camion CamionAsociado
+
+
+- clase Producto
+           atributos:
+int codigoProducto
+String tipoProducto
+- clase Pack
+             atributos:
+ListaProductos//max 20 
+
